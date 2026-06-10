@@ -2428,70 +2428,65 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
       </div>
       <div class="qb-form">
         <div>
-          <div class="qb-field-label"><span class="name">支援範囲<span class="en">/ Scope</span></span><span class="hint">複数選択</span></div>
-          <div class="qb-options" data-type="multi" data-key="scope">
-            <button class="qb-option active" data-v="80000">撮影 <span class="px">+¥80k</span></button>
-            <button class="qb-option active" data-v="60000">編集 <span class="px">+¥60k</span></button>
-            <button class="qb-option active" data-v="100000">投稿代行 <span class="px">+¥100k</span></button>
-            <button class="qb-option active" data-v="80000">分析レポート <span class="px">+¥80k</span></button>
-            <button class="qb-option" data-v="150000">広告運用 <span class="px">+¥150k</span></button>
+          <div class="qb-field-label"><span class="name">投稿本数<span class="en">/ Posts</span></span><span class="hint">1つ選択</span></div>
+          <div class="qb-options" data-type="single" data-key="freq">
+            <button class="qb-option" data-v="0">月8本（基本）</button>
+            <button class="qb-option active" data-v="50000">月12本 <span class="px">+¥50k</span></button>
+            <button class="qb-option" data-v="100000">月16本以上 <span class="px">+¥100k</span></button>
           </div>
         </div>
         <div>
-          <div class="qb-field-label"><span class="name">投稿頻度<span class="en">/ Frequency</span></span><span class="hint">1つ選択</span></div>
-          <div class="qb-options" data-type="single" data-key="freq">
-            <button class="qb-option" data-v="50000">月4本 <span class="px">+¥50k</span></button>
-            <button class="qb-option active" data-v="100000">月8本 <span class="px">+¥100k</span></button>
-            <button class="qb-option" data-v="140000">月12本 <span class="px">+¥140k</span></button>
-            <button class="qb-option" data-v="180000">月16本 <span class="px">+¥180k</span></button>
+          <div class="qb-field-label"><span class="name">レポート・分析<span class="en">/ Report</span></span><span class="hint">1つ選択</span></div>
+          <div class="qb-options" data-type="single" data-key="report">
+            <button class="qb-option" data-v="0">月次レポート</button>
+            <button class="qb-option active" data-v="30000">月次＋次月施策設計 <span class="px">+¥30k</span></button>
+            <button class="qb-option" data-v="60000">週次＋専属PM <span class="px">+¥60k</span></button>
+          </div>
+        </div>
+        <div>
+          <div class="qb-field-label"><span class="name">撮影<span class="en">/ Shooting</span></span><span class="hint">1つ選択</span></div>
+          <div class="qb-options" data-type="single" data-key="shoot">
+            <button class="qb-option" data-v="0">なし</button>
+            <button class="qb-option active" data-v="30000">スタジオ月1回 <span class="px">+¥30k</span></button>
+            <button class="qb-option" data-v="50000">スタジオ月2回 <span class="px">+¥50k</span></button>
+            <button class="qb-option" data-v="60000">ロケ撮影 <span class="px">+¥60k</span></button>
           </div>
         </div>
         <div>
           <div class="qb-field-label"><span class="name">リール制作<span class="en">/ Reels</span></span><span class="hint">1つ選択</span></div>
           <div class="qb-options" data-type="single" data-key="reel">
-            <button class="qb-option active" data-v="0">なし</button>
-            <button class="qb-option" data-v="80000">月2本 <span class="px">+¥80k</span></button>
-            <button class="qb-option" data-v="150000">月4本 <span class="px">+¥150k</span></button>
-            <button class="qb-option" data-v="280000">月8本 <span class="px">+¥280k</span></button>
-          </div>
-        </div>
-        <div>
-          <div class="qb-field-label"><span class="name">撮影回数<span class="en">/ Shooting</span></span><span class="hint">1つ選択</span></div>
-          <div class="qb-options" data-type="single" data-key="shoot">
             <button class="qb-option" data-v="0">なし</button>
-            <button class="qb-option active" data-v="80000">スタジオ月1回 <span class="px">+¥80k</span></button>
-            <button class="qb-option" data-v="150000">スタジオ月2回 <span class="px">+¥150k</span></button>
-            <button class="qb-option" data-v="220000">ロケ撮影込み <span class="px">+¥220k</span></button>
+            <button class="qb-option active" data-v="40000">月4本 <span class="px">+¥40k</span></button>
+            <button class="qb-option" data-v="80000">月8本 <span class="px">+¥80k</span></button>
           </div>
         </div>
         <div>
-          <div class="qb-field-label"><span class="name">インフルエンサー<span class="en">/ Casting</span></span><span class="hint">1つ選択</span></div>
-          <div class="qb-options" data-type="single" data-key="infl">
-            <button class="qb-option active" data-v="0">なし</button>
-            <button class="qb-option" data-v="150000">1〜2名 <span class="px">+¥150k〜</span></button>
-            <button class="qb-option" data-v="300000">3名以上・継続起用 <span class="px">+¥300k〜</span></button>
-          </div>
-        </div>
-        <div>
-          <div class="qb-field-label"><span class="name">広告運用予算<span class="en">/ Ad Spend</span></span><span class="hint">運用費のみ・媒体費別</span></div>
+          <div class="qb-field-label"><span class="name">広告運用<span class="en">/ Ad Ops</span></span><span class="hint">任意・媒体費別</span></div>
           <div class="qb-options" data-type="single" data-key="ad">
             <button class="qb-option active" data-v="0">なし</button>
-            <button class="qb-option" data-v="80000">〜30万/月 <span class="px">+¥80k</span></button>
-            <button class="qb-option" data-v="150000">30〜100万 <span class="px">+¥150k</span></button>
-            <button class="qb-option" data-v="250000">100万〜 <span class="px">+¥250k</span></button>
+            <button class="qb-option" data-v="50000">運用代行〜月100万 <span class="px">+¥50k</span></button>
+            <button class="qb-option" data-v="100000">大規模運用 月100万〜 <span class="px">+¥100k</span></button>
+          </div>
+        </div>
+        <div>
+          <div class="qb-field-label"><span class="name">インフルエンサー<span class="en">/ Casting</span></span><span class="hint">任意</span></div>
+          <div class="qb-options" data-type="single" data-key="infl">
+            <button class="qb-option active" data-v="0">なし</button>
+            <button class="qb-option" data-v="100000">1〜2名 <span class="px">+¥100k〜</span></button>
+            <button class="qb-option" data-v="200000">3名以上・継続 <span class="px">+¥200k〜</span></button>
           </div>
         </div>
       </div>
-      <div class="qb-result">
+            <div class="qb-result">
         <div class="qb-result-label">Estimated Monthly Fee</div>
         <div class="qb-result-total">
           <span class="currency">¥</span>
-          <span id="qb-total">420,000</span>
+          <span id="qb-total">350,000</span>
           <span class="unit">/ 月</span>
         </div>
         <div class="qb-breakdown" id="qb-breakdown"></div>
         <button class="qb-submit" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">この条件で相談する <span class="arrow">→</span></button>
-        <p class="qb-note">※ 表示金額は参考シミュレーション値です。<br/>正式なお見積もりはヒアリング後にご提示します。税抜表示。</p>
+        <p class="qb-note">※ 表示金額は参考シミュレーション値です（税抜）。広告の媒体費・インフルエンサー起用費は別途。<br/>正式なお見積もりはヒアリング後にご提示します。</p>
       </div>
     </div>
   </div>
@@ -2798,21 +2793,21 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
 // Quote Builder
 (function () {
-  const state = { scope: 0, freq: 0, reel: 0, shoot: 0, infl: 0, ad: 0 };
-  const labels = { scope: [], freq: '', reel: '', shoot: '', infl: '', ad: '' };
+  const state = { freq: 0, report: 0, reel: 0, shoot: 0, infl: 0, ad: 0 };
+  const labels = { freq: '', report: '', reel: '', shoot: '', infl: '', ad: '' };
   const BASE = 200000;
 
   function recalc() {
-    const total = BASE + state.scope + state.freq + state.reel + state.shoot + state.infl + state.ad;
+    const total = BASE + state.freq + state.report + state.reel + state.shoot + state.infl + state.ad;
     const totalEl = document.getElementById('qb-total');
     animateNumber(totalEl, parseInt(totalEl.dataset.current || BASE), total);
     totalEl.dataset.current = total;
     const bd = document.getElementById('qb-breakdown');
-    const rows = [['ベース（戦略設計・ディレクション）', BASE]];
-    if (labels.scope.length) rows.push(['支援: ' + labels.scope.join(' / '), state.scope]);
-    if (labels.freq) rows.push(['投稿: ' + labels.freq, state.freq]);
-    if (labels.reel && state.reel > 0) rows.push(['リール: ' + labels.reel, state.reel]);
+    const rows = [['ベースプラン（戦略設計・月8本運用・月次レポート）', BASE]];
+    if (labels.freq && state.freq > 0) rows.push(['投稿: ' + labels.freq, state.freq]);
+    if (labels.report && state.report > 0) rows.push(['レポート: ' + labels.report, state.report]);
     if (labels.shoot && state.shoot > 0) rows.push(['撮影: ' + labels.shoot, state.shoot]);
+    if (labels.reel && state.reel > 0) rows.push(['リール: ' + labels.reel, state.reel]);
     if (labels.infl && state.infl > 0) rows.push(['インフルエンサー: ' + labels.infl, state.infl]);
     if (labels.ad && state.ad > 0) rows.push(['広告運用: ' + labels.ad, state.ad]);
     bd.innerHTML = rows.map(([k, v]) =>
