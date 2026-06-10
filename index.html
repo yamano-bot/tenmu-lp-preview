@@ -1379,6 +1379,12 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   opacity: 0.7;
 }
 .qb-option.active .px { opacity: 0.9; }
+.qb-slider-row { display: flex; align-items: center; gap: 18px; padding: 8px 0 4px; }
+.qb-slider { -webkit-appearance: none; appearance: none; flex: 1; height: 5px; border-radius: 3px; background: var(--line); outline: none; cursor: pointer; }
+.qb-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--teal); border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.25); cursor: pointer; transition: transform 0.15s; }
+.qb-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
+.qb-slider::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--teal); border: 3px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.25); cursor: pointer; }
+.qb-posts-val { font-family: var(--font-heading); font-weight: 800; font-size: 20px; color: var(--teal); white-space: nowrap; min-width: 70px; text-align: right; letter-spacing: -0.01em; }
 
 .qb-result {
   position: sticky;
@@ -2428,36 +2434,36 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
       </div>
       <div class="qb-form">
         <div>
-          <div class="qb-field-label"><span class="name">投稿本数<span class="en">/ Posts</span></span><span class="hint">1つ選択</span></div>
-          <div class="qb-options" data-type="single" data-key="freq">
-            <button class="qb-option" data-v="0">月8本（基本）</button>
-            <button class="qb-option active" data-v="50000">月12本 <span class="px">+¥50k</span></button>
-            <button class="qb-option" data-v="100000">月16本以上 <span class="px">+¥100k</span></button>
-          </div>
-        </div>
-        <div>
-          <div class="qb-field-label"><span class="name">レポート・分析<span class="en">/ Report</span></span><span class="hint">1つ選択</span></div>
-          <div class="qb-options" data-type="single" data-key="report">
-            <button class="qb-option" data-v="0">月次レポート</button>
-            <button class="qb-option active" data-v="30000">月次＋次月施策設計 <span class="px">+¥30k</span></button>
-            <button class="qb-option" data-v="60000">週次＋専属PM <span class="px">+¥60k</span></button>
+          <div class="qb-field-label"><span class="name">投稿数<span class="en">/ Posts</span></span><span class="hint">月4〜20本</span></div>
+          <div class="qb-slider-row">
+            <input type="range" id="qb-posts" class="qb-slider" min="4" max="20" step="1" value="8" aria-label="月間投稿数" />
+            <span class="qb-posts-val" id="qb-posts-val">月8本</span>
           </div>
         </div>
         <div>
           <div class="qb-field-label"><span class="name">撮影<span class="en">/ Shooting</span></span><span class="hint">1つ選択</span></div>
           <div class="qb-options" data-type="single" data-key="shoot">
             <button class="qb-option" data-v="0">なし</button>
-            <button class="qb-option active" data-v="30000">スタジオ月1回 <span class="px">+¥30k</span></button>
-            <button class="qb-option" data-v="50000">スタジオ月2回 <span class="px">+¥50k</span></button>
-            <button class="qb-option" data-v="60000">ロケ撮影 <span class="px">+¥60k</span></button>
+            <button class="qb-option active" data-v="100000">4ヶ月に1回（基本）<span class="px">+¥100k</span></button>
+            <button class="qb-option" data-v="150000">2ヶ月に1回 <span class="px">+¥150k</span></button>
+            <button class="qb-option" data-v="250000">スタジオ月1回 <span class="px">+¥250k</span></button>
           </div>
         </div>
         <div>
-          <div class="qb-field-label"><span class="name">リール制作<span class="en">/ Reels</span></span><span class="hint">1つ選択</span></div>
-          <div class="qb-options" data-type="single" data-key="reel">
-            <button class="qb-option" data-v="0">なし</button>
-            <button class="qb-option active" data-v="40000">月4本 <span class="px">+¥40k</span></button>
-            <button class="qb-option" data-v="80000">月8本 <span class="px">+¥80k</span></button>
+          <div class="qb-field-label"><span class="name">ロケ撮影<span class="en">/ On-location</span></span><span class="hint">1つ選択</span></div>
+          <div class="qb-options" data-type="single" data-key="loca">
+            <button class="qb-option active" data-v="0">なし</button>
+            <button class="qb-option" data-v="30000">あり <span class="px">+¥30k</span></button>
+          </div>
+        </div>
+        <div>
+          <div class="qb-field-label"><span class="name">その他SNS運用<span class="en">/ Other SNS</span></span><span class="hint">複数選択</span></div>
+          <div class="qb-options" data-type="multi" data-key="sns">
+            <button class="qb-option" data-v="50000">X <span class="px">+¥50k</span></button>
+            <button class="qb-option" data-v="50000">Facebook <span class="px">+¥50k</span></button>
+            <button class="qb-option" data-v="50000">LINE <span class="px">+¥50k</span></button>
+            <button class="qb-option" data-v="50000">TikTok <span class="px">+¥50k</span></button>
+            <button class="qb-option" data-v="100000">YouTube <span class="px">+¥100k</span></button>
           </div>
         </div>
         <div>
@@ -2481,7 +2487,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
         <div class="qb-result-label">Estimated Monthly Fee</div>
         <div class="qb-result-total">
           <span class="currency">¥</span>
-          <span id="qb-total">350,000</span>
+          <span id="qb-total">300,000</span>
           <span class="unit">/ 月</span>
         </div>
         <div class="qb-breakdown" id="qb-breakdown"></div>
@@ -2793,23 +2799,23 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
 // Quote Builder
 (function () {
-  const state = { freq: 0, report: 0, reel: 0, shoot: 0, infl: 0, ad: 0 };
-  const labels = { freq: '', report: '', reel: '', shoot: '', infl: '', ad: '' };
-  const BASE = 200000;
+  const BASE = 160000;
+  const state = { posts: 0, shoot: 0, loca: 0, sns: 0, ad: 0, infl: 0 };
+  const labels = { posts: '', shoot: '', loca: '', sns: [], ad: '', infl: '' };
 
   function recalc() {
-    const total = BASE + state.freq + state.report + state.reel + state.shoot + state.infl + state.ad;
+    const total = BASE + state.posts + state.shoot + state.loca + state.sns + state.ad + state.infl;
     const totalEl = document.getElementById('qb-total');
     animateNumber(totalEl, parseInt(totalEl.dataset.current || BASE), total);
     totalEl.dataset.current = total;
     const bd = document.getElementById('qb-breakdown');
-    const rows = [['ベースプラン（戦略設計・月8本運用・月次レポート）', BASE]];
-    if (labels.freq && state.freq > 0) rows.push(['投稿: ' + labels.freq, state.freq]);
-    if (labels.report && state.report > 0) rows.push(['レポート: ' + labels.report, state.report]);
+    const rows = [['ベース（戦略設計・運用基盤・月次＋次月施策・リール月4本）', BASE]];
+    if (labels.posts) rows.push(['投稿: ' + labels.posts, state.posts]);
     if (labels.shoot && state.shoot > 0) rows.push(['撮影: ' + labels.shoot, state.shoot]);
-    if (labels.reel && state.reel > 0) rows.push(['リール: ' + labels.reel, state.reel]);
-    if (labels.infl && state.infl > 0) rows.push(['インフルエンサー: ' + labels.infl, state.infl]);
+    if (labels.loca && state.loca > 0) rows.push(['ロケ撮影', state.loca]);
+    if (labels.sns.length) rows.push(['他SNS: ' + labels.sns.join(' / '), state.sns]);
     if (labels.ad && state.ad > 0) rows.push(['広告運用: ' + labels.ad, state.ad]);
+    if (labels.infl && state.infl > 0) rows.push(['インフルエンサー: ' + labels.infl, state.infl]);
     bd.innerHTML = rows.map(([k, v]) =>
       `<div class="qb-breakdown-item"><span>${k}</span><span>¥${v.toLocaleString()}</span></div>`
     ).join('');
@@ -2827,6 +2833,19 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
     requestAnimationFrame(tick);
   }
 
+  // Posts slider
+  const slider = document.getElementById('qb-posts');
+  const postsVal = document.getElementById('qb-posts-val');
+  function syncPosts() {
+    const n = parseInt(slider.value);
+    state.posts = (n - 4) * 10000;
+    labels.posts = '月' + n + '本';
+    postsVal.textContent = '月' + n + '本';
+    recalc();
+  }
+  slider.addEventListener('input', syncPosts);
+
+  // Button groups
   document.querySelectorAll('.qb-options').forEach(group => {
     const type = group.dataset.type;
     const key = group.dataset.key;
@@ -2866,6 +2885,8 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
     });
     sync();
   });
+
+  syncPosts();
 })();
 </script>
 
