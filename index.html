@@ -2799,7 +2799,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
 // Quote Builder
 (function () {
-  const BASE = 160000;
+  const BASE = 140000;
   const state = { posts: 0, shoot: 0, loca: 0, sns: 0, ad: 0, infl: 0 };
   const labels = { posts: '', shoot: '', loca: '', sns: [], ad: '', infl: '' };
 
@@ -2838,7 +2838,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   const postsVal = document.getElementById('qb-posts-val');
   function syncPosts() {
     const n = parseInt(slider.value);
-    state.posts = (n - 4) * 10000;
+    state.posts = (n - 4) * 15000;
     labels.posts = '月' + n + '本';
     postsVal.textContent = '月' + n + '本';
     recalc();
