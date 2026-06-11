@@ -1798,6 +1798,38 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .reveal.delay-2 { transition-delay: 0.2s; }
 .reveal.delay-3 { transition-delay: 0.3s; }
 
+
+/* ============ FLOAT BANNER ============ */
+.float-banner {
+  position: fixed;
+  right: 24px; bottom: 24px;
+  width: 280px; max-width: calc(100vw - 48px);
+  z-index: 200;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  pointer-events: none;
+}
+.float-banner.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.float-banner-link {
+  display: block; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.28);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.float-banner-link:hover { transform: translateY(-3px); box-shadow: 0 18px 50px rgba(0,0,0,0.35); }
+.float-banner-link img { width: 100%; height: auto; display: block; }
+.float-banner-close {
+  position: absolute; top: -10px; right: -10px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--ink); color: #fff; font-size: 15px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3); border: 2px solid #fff; z-index: 2;
+  transition: background 0.2s, transform 0.2s;
+}
+.float-banner-close:hover { background: var(--terra); transform: scale(1.1); }
+@media (max-width: 768px) {
+  .float-banner { width: 148px; right: 12px; bottom: 12px; }
+  .float-banner-close { width: 26px; height: 26px; top: -8px; right: -8px; }
+}
 </style>
 </head>
 <body>
@@ -2671,6 +2703,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   </div>
 </footer>
 
+<!-- =========== FLOAT BANNER =========== -->
+<div class="float-banner" id="floatBanner">
+  <button class="float-banner-close" id="floatBannerClose" type="button" aria-label="バナーを閉じる">×</button>
+  <a href="https://drive.google.com/uc?export=download&amp;id=11o0WymiQ3Q9UUkZ9NbDvorNNu5q6pX0J" target="_blank" rel="noopener" class="float-banner-link">
+    <img src="images/cta-banner.svg" alt="Tenmu サービス資料をダウンロード" loading="lazy" />
+  </a>
+</div>
+
 
 <script>
 // Nav scroll
@@ -2885,6 +2925,23 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   });
 
   syncPosts();
+})();
+
+// Float banner
+(function () {
+  const banner = document.getElementById('floatBanner');
+  if (!banner) return;
+  const closeBtn = document.getElementById('floatBannerClose');
+  let closed = false;
+  try { closed = sessionStorage.getItem('tenmuBannerClosed') === '1'; } catch (e) {}
+  function maybeShow() { if (!closed && window.scrollY > 600) banner.classList.add('show'); }
+  closeBtn.addEventListener('click', function () {
+    banner.classList.remove('show');
+    closed = true;
+    try { sessionStorage.setItem('tenmuBannerClosed', '1'); } catch (e) {}
+  });
+  window.addEventListener('scroll', maybeShow, { passive: true });
+  maybeShow();
 })();
 </script>
 
