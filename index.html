@@ -16,9 +16,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Adobe Fonts kit (Tenmu側で発行して差し込み) -->
 <!-- <link rel="stylesheet" href="https://use.typekit.net/xxxxxxx.css"> -->
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-665WKWCWQ9"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-665WKWCWQ9');</script>
 <style>
 :root {
   --teal:         #1a7085;
@@ -2961,13 +2958,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 (function(){
-  if(!window.gtag) return;
   document.addEventListener('click',function(e){
     var el=e.target.closest('a,button'); if(!el) return;
-    var href=el.getAttribute('href')||'';
-    if(href.indexOf('brand/contact')>-1 || el.classList.contains('qb-submit')) gtag('event','cta_contact',{location:'lp1'});
-    else if(href.indexOf('drive.google')>-1) gtag('event','cta_material',{location:'lp1'});
-    else if(el.closest('.float-banner')) gtag('event','cta_banner',{location:'lp1'});
+    var href=el.getAttribute('href')||''; var dl=window.dataLayer=window.dataLayer||[];
+    if(href.indexOf('brand/contact')>-1 || el.classList.contains('qb-submit')) dl.push({event:'cta_contact', location:'lp1'});
+    else if(href.indexOf('drive.google')>-1) dl.push({event:'cta_material', location:'lp1'});
+    else if(el.closest('.float-banner')) dl.push({event:'cta_banner', location:'lp1'});
   }, true);
 })();
 </script>
